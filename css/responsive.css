@@ -1,0 +1,360 @@
+/* Mobile */
+@media only screen and (max-width: 767px)
+{
+
+  #modalMusica .modal-content p{
+    font-size:36px;
+    line-height:40px;
+  }
+
+  #modalMusica .modal-content p + span{
+    font-size:15px
+  }
+
+  #modalMusica .modal-content .boton{
+    margin-bottom:15px;
+  }
+
+  .title{
+    font-size: 45px;
+    padding: 0 15px;
+  }
+
+  .subtitle{
+    font-size: 19px;
+    padding: 0 15px;
+  }
+
+  section.portada .content-portada h1{
+    font-size: 60px;
+    line-height: 20px;
+  }
+
+  section.portada .content-portada h2{
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+
+  section.cuenta-regresiva .box-aros{
+    width: 90%;
+  }
+
+  section.portada .box-nombres-fecha-portada h1 span{
+    font-size: 35px;
+    width: 45px;
+    height: 45px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  section.portada .content-portada span.fecha:before{
+    left:0;
+    width: 25%;
+    top: 0.7em;
+  }
+
+  section.portada .content-portada span.fecha:after{
+    right: -1%;
+    width: 25%;
+    top: 0.7em;
+  }
+
+  section.portada .content-portada{
+    width: 85%;
+  }
+
+  section.portada .content-portada span.fecha{
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
+
+  section.portada .box-nombres-fecha-portada .line{
+    width: 95%;
+    margin-top: 30px;
+  }
+
+  section.portada{
+    padding-bottom: 50%;
+  }
+
+  section.portada .box-frase-portada p{
+    font-size: 18px;
+    line-height:30px
+  }
+
+  section.portada .box-frase-portada{
+    margin-top: 50px;
+  }
+
+  section.cuenta-regresiva .box-aros .box-circulo span.falta{
+    font-size: 35px;
+  }
+
+  section.footer h4{
+    font-size: 55px;
+    margin-bottom: 10px;
+  }
+
+  section.footer h4 span{
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  section.footer .col-acciones-footer ul{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  section.cuenta-regresiva{
+    padding:0;
+  }
+
+  section.cuenta-regresiva .box-cuenta-regresiva{
+    width: 90%;
+  }
+
+  section.cuenta-regresiva .reloj-col span.time {
+    font-size: 18px;
+  }
+
+  section.cuenta-regresiva .box-aros .box-circulo{
+    padding: 20px;
+    width: 290px;
+    height: 290px;
+  }
+
+  section.ceremonia-fiesta .col-ceremonia h3, section.ceremonia-fiesta .col-fiesta h3{
+    padding: 8px 30px;
+    font-size: 50px;
+  }
+
+  section.ceremonia-fiesta .info-col .info-box h6{
+    font-size:35px;
+  }
+
+  section.ceremonia-fiesta .info-col .info-box{
+    margin: 55px 0;
+  }
+
+  section.ceremonia-fiesta .col-ceremonia .anim-anillos, section.ceremonia-fiesta .anim-fiesta{
+    width: 40%;
+  }
+
+
+  section.instagram{
+    padding-top: 35%;
+    padding-bottom: 50%;
+  }
+
+  section.footer{
+    padding: 0;
+  }
+
+  section.regalos{
+    padding:0;
+  }
+
+  section.fiesta{
+    padding: 100px 0 180px;
+  }
+
+  section.ceremonia-fiesta{
+    padding-bottom: 45%;
+  }
+  
+  section.galeria{
+    padding:0;
+  }
+
+  #modalMapa .modal-header .modal-title{
+    font-size: 23px;
+    padding-top: 10px;
+  }
+
+  section.regalos .regalos-flor-der {
+    bottom: 16%;
+    width: 26%;
+  }
+
+  section.ceremonia-fiesta{
+    padding-top: 15%;
+  }
+  
+  section.ceremonia-fiesta::before {
+    top: -15%;
+  }
+
+  section.cuenta-regresiva .box-aros .box-circulo img.divisor{
+    width: 60%;
+  }
+
+  section.ceremonia-fiesta .info-col .info-box a.boton{
+    min-width: 85%;
+    padding: 18px 35px;
+  }
+
+  section.ceremonia-fiesta:after{
+    bottom: -2%;
+  }
+
+  section.fiesta:after{
+    bottom: -1px;
+  }
+
+  section.instagram:before{
+    top: -1px;
+  }
+
+  section.instagram:after{
+    bottom: -1px;
+  }
+
+  section.instagram .anim-instagram{
+    margin-top: 20px;
+  }
+
+  #modalMapa .close{
+    top:15px;
+    right:5px
+  }
+
+  section.cuenta-regresiva .box-cuenta-regresiva .falta{
+    font-size: 45px;
+  }
+
+  section.cuenta-regresiva .reloj-col span.number{
+    font-size: 40px;
+  }
+  
+  .modal .modal-content{
+    padding: 12% 2%;
+  }
+
+  .modal-content .modal-header .modal-title {
+    font-size: 24px;
+  }
+
+  section.fiesta .item-fiesta a.boton{
+    min-width: 100%;
+    padding: 18px 30px;
+  }
+
+  #controlador-musica{
+    top: initial;
+    bottom:0;
+    right: 0;
+  }
+
+  .music-anim-icon{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+  }
+
+  #googleMap {
+    height: 430px;
+  }
+
+  section.portada::after{
+    background-size: 550px;
+  }
+
+  section.fiesta .subtitle{
+    margin-bottom: 55px;
+  }
+
+  section.fiesta .item-fiesta h3{
+    font-size:30px
+  }
+
+  section.instagram .hashtag{
+    font-size: 35px;
+  }
+
+  .modal .close{
+    right:0;
+  }
+
+  #modal-lang.modal-transparent .modal-content .close{
+    right:45px
+  }
+
+
+}
+
+
+
+
+/* De tablet a Descktop */
+@media only screen and (min-width: 992px)
+{
+
+  .content-fotos .shadow-left{
+    display: block;
+    position: absolute;
+    left: 0;
+    z-index: 999;
+    height: 150%;
+    width: 6%;
+    background: url('../img/galeria_izq.svg') left center no-repeat;
+    top:-27%
+  }
+
+  .content-fotos .shadow-right{
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    height: 150%;
+    width: 6%;
+    background: url('../img/galeria_der.svg') right center repeat-y;
+    top:-27%
+  }
+
+  .modal .close {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    color:var(--color-2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--color-3);
+    opacity: 1;
+    outline: none;
+    font-size: 34px;
+    font-weight: normal;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.50);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.50);
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.50);
+    -webkit-transition: all 0.5s 0s ease;
+    -moz-transition: all 0.5s 0s ease;
+    -o-transition: all 0.5s 0s ease;
+    transition: all 0.5s 0s ease;
+  }
+
+  .modal-content .close:hover {
+    color: var(--color-4);
+    background-color:--color-2;
+    opacity: 1 !important;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 375px)
+{
+  
+  section.instagram .hashtag{
+    font-size: 35px;
+  }
+
+}
