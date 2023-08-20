@@ -158,7 +158,7 @@
                 <div class="box-cuenta-regresiva">
 
 
-                    <span class="falta">Falta</span>
+                    <span class="falta">Faltan</span>
 
 
                     <div id="reloj" class="reloj">
@@ -236,8 +236,11 @@
                             <div class="info-box">
                                 <h6>Dirección</h6>
                                 <p>Garibaldi 860 - Tandil</p>
-                            </div>    
+                            </div>
                             <a href="#" data-evento="Fiesta" class="boton confirmar-asistencia">Confirmar asistencia</a>
+                            <p></p>
+                            <p style="color: white; font-size: 14px;">Tenes tiempo de confirmar hasta el dia 2 de
+                                septiembre</p>
                         </div>
 
                     </div>
@@ -273,14 +276,12 @@
             <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
             <div class="cont row">
                 <div class="polaroid mislider">
-                    <div class="photo"
-                        style="background-image: url('img/BOOK AGUS-46.jpg')">
+                    <div class="photo" style="background-image: url('img/BOOK AGUS-46.jpg')">
                     </div>
                 </div>
 
                 <div class="polaroid mislider">
-                    <div class="photo"
-                        style="background-image: url('img/BOOK AGUS-70.jpg')">
+                    <div class="photo" style="background-image: url('img/BOOK AGUS-70.jpg')">
                     </div>
                 </div>
 
@@ -393,7 +394,8 @@
 
                         <div class="box-instagram-1">
                             <div class="box-instagram-2">
-                                <a target="_blank" href="https://www.instagram.com/aagusddiaz" class="hashtag">#15AGUS</a>
+                                <a target="_blank" href="https://www.instagram.com/aagusddiaz"
+                                    class="hashtag">#15AGUS</a>
                             </div>
                         </div>
 
@@ -538,7 +540,7 @@
 
                                 <div class="form-group">
                                     <textarea id="comentariosAsistente" class="form-control" name="comentarios" rows="2"
-                                        placeholder="Ingrese algún dato importante. Ej: Soy vegetariano"></textarea>
+                                        placeholder="Ingrese algún dato importante. Ej: Soy vegetariano, ausencia de un integrante de la familia, etc"></textarea>
                                 </div>
 
                                 <input id="eventoAsistencia" type="hidden" name="evento" value="">
@@ -670,7 +672,7 @@
 
                         <p>
                             <li>Elegante sport</li>
-                            <li>Mujeres no asistir de blanco</li>                            
+                            <li>Mujeres no asistir de blanco</li>
                         </p>
                     </div>
 
@@ -866,7 +868,7 @@
 
     <!-- Lottie -->
     <script src="https://www.fixdate.io/modelo-invitacion/42/js/lottie_svg.min.js"></script>
- 
+
 
 
     <!-- Animacion loader -->
@@ -1270,139 +1272,6 @@
 
         });
 
-
-        // Validacion de form.
-        function isOkAsistencia() {
-
-            // Remuevo mensajes de error anteriores
-            $("#error-form").remove();
-
-            // Variables necesarias para la validacion
-            var flag = true;
-            var err = '';
-
-
-            // Variables del form para validar.
-            var asistenteName = $.trim($("#nombreAsistente").val());
-            var asistenteComentarios = $.trim($("#comentariosAsistente").val());
-
-
-            // Nombre
-            if (asistenteName == '') {
-                flag = false;
-                err = lang_nombreRequerido;
-            } else {
-                if (asistenteName.length > 20) {
-                    flag = false;
-                    err = lang_caracteresNombreAsistencia;
-                }
-            }
-
-            // Comentarios
-            if (asistenteComentarios != '') {
-                if (asistenteComentarios.length > 100) {
-                    flag = false;
-                    err = lang_caracteresComentariosAsistencia;
-                }
-            }
-
-            // Si hay error
-            if (flag === false) {
-
-                // Imprimo el error
-                $('#formAsistencia').after('<span id="error-form">' + err + '</span>');
-
-            }
-
-            // Retorno el estado de la validacion
-            return flag;
-
-        }
-
-
-        // Enviar asistencia
-        $('body').on('click', '#sendAsistencia', function (e) {
-
-            e.preventDefault();
-
-
-            if (isOkAsistencia()) //Form bien validado
-            {
-
-                // Load and disabled buttom.
-                $("#sendAsistencia").text(lang_informandoAsistencia + "...");
-                $("#sendAsistencia").prop("disabled", true);
-
-                // Obtengo el Form.
-                var formulario = $("#formAsistencia")[0];
-
-                // Obtengo los datos del formulario
-                var datos = new FormData(formulario);
-
-
-                // Visualizar como viajan los datos
-                // for (var pair of datos.entries()) {
-                //   console.log(pair[0] + ", " + pair[1]);
-                // }
-
-
-                // Envio con fetch los datos mediante POST
-                fetch(_pathApp + "producto/fetchs/confirmar-asistencia.php", {
-                    method: "POST",
-                    body: datos
-                })
-                    // Promesas fetch
-                    .then(res => res.json())
-                    .then(data => {
-
-                        // Si recibo error 
-                        if (data.error === true) {
-
-                            $("#sendAsistencia").text(lang_confirmarAsistencia);
-                            $("#sendAsistencia").prop("disabled", false);
-
-                            // Imprimo el error
-                            $('#formAsistencia').after('<span id="error-form">' + data.desc + '</span>');
-                        }
-
-                        // Si no hay error 
-                        if (data.error === false) {
-
-                            $("#sendAsistencia").text(lang_confirmarAsistencia);
-                            $("#sendAsistencia").prop("disabled", false);
-
-
-                            // Oculto elementos del form y reseteo
-                            $('#formAsistencia')[0].reset();
-                            $('#modalAsistencia .formulario-content, #modalAsistencia .modal-footer, #modalAsistencia h5').hide();
-
-
-
-                            // Acomodo el css para centrar mensaje
-                            $('#modalAsistencia .modal-body').addClass('fix-height');
-
-                            // Muestro mensaje de exito
-                            $('#modalAsistencia .msj-content').html(
-                                "<h5>" + lang_asistenciaMsjExito_1 + "</h5><p>" + lang_asistenciaMsjExito_2 + "</p>"
-                            ).show();
-
-
-                            // Cierro modal y vuelvo a activar form
-                            setTimeout(function () {
-
-                                $('#modalAsistencia').modal('hide');
-                                $('#modalAsistencia .formulario-content, #modalAsistencia .modal-footer, #modalAsistencia h5').show();
-                                $('#modalAsistencia .msj-content').html('').hide();
-                                $('#modalAsistencia .modal-body').removeClass('fix-height');
-
-                            }, 4000);
-                        }
-
-                    });
-            }
-
-
-        });
     </script>
 
 
@@ -1751,6 +1620,9 @@
             imageSrc: 'img/IMG-20230820-WA0011.jpg'
         });
     </script>
+    <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore-compat.js"></script>
+    <script src="js/send-data.js"></script>
     <script src="js/main.js"></script>
     <script src="js/polaroid.js"></script>
 
